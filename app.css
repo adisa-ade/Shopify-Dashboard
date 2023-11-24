@@ -1,0 +1,309 @@
+:root{
+    /* COLORS */
+    /* Shades used in the Shopify Nav Bar */
+    --grey-50 : #656266;
+    --grey-100: #616161;
+    --grey-200: #322F33;
+    --grey-300: #1C181D;
+    --green: #36FBA1;
+
+    /* Color shades used for the font on the Shopify design layout. */
+    --greyLight: #E3E3E3;
+    ---greyMid: #616161;
+    --greyDark: #475467;
+    
+    /* Used for the strokes on the design layout. */
+    --s-50: #EBEBEB;
+    --s-100: #000000/7%;
+    --s-200:#FFFFFF/20%;
+
+    /* Colors used for different states of the interactive components. */
+    --hover: #F7F7F7;
+    --pressed: #F0F0F0;
+    --focused: #005BD3;
+    
+    /* White and the layout background color. */
+    --white: #FFFFFF;
+    --background:  #F1F1F1;
+
+    /* Below are the font sizes used in this projects. */
+    --fontSize-12: 12px;
+    --fontSize-13: 13px;
+    --fontSize-14: 14px;    
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+}
+header{
+    background-color: var(--grey-300);
+    width: 100%;
+    margin: 0;
+}
+#navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--greyLight);
+    padding: 0 20px;        
+}
+#nav-menu, #nav-search{
+    display: flex;
+}
+.user{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-search{
+    align-items: center;
+    width: 50%;
+}
+#nav-search input{
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--grey-200);
+    outline: none;
+    border: 1px var(--grey-100);    
+}
+#nav-search input::placeholder{
+    padding-left: 30px;
+    color: var(--greyLight);
+}
+#search-icon{
+    position: relative;
+    left: 200%;
+    top: 20%;
+
+    filter:brightness(3);
+}
+#notification-icon, #cross{
+    filter: brightness(5);
+    width: 30px;
+}
+#nav-menu{
+    column-gap: 10px;
+}
+
+#name{
+    background-color: var(--grey-200);
+    font-size: var(--fontSize-12);
+    font-weight: 300;
+    padding: 13px;
+    border-radius: 10px;
+    width: 134px;
+}
+#alias{
+    background-color: var(--green);
+    color: var(---greyMid);
+    font: var(--fontSize-12);
+    font-weight:bold;
+    padding: 7.5px;
+    border-radius: 10px;
+    position: relative;
+    right: 21%;
+}
+#free{
+    width: 100%;
+    margin-top: 30px;
+}
+#free-trial{
+    display: flex;
+    flex-direction: column;    
+    color: var(--greyLight);
+    font-size: var(--fontSize-12);
+    padding: 12px 8px 12px 16px;
+    background-color: var(--grey-300);    
+}
+#free-trial img{
+    width: 36px;
+    height: 36px;
+}
+#trial-group{
+    display: flex;
+    align-items: center;        
+}
+.trial-button{
+    padding: 13px 20px;
+    border-radius: 10px;
+    color: var(--grey-300);
+    font-size: var(--fontSize-12);
+    font-weight: 700;
+    border: 0;
+    outline: none;
+}
+.button1{
+    display: none;
+}
+.plan{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    column-gap: 10px;
+}
+.container{
+    background-color: var(--white);
+    padding: 12px 8px 12px 16px;
+    margin-top: 20px;    
+}
+.main{
+    display: flex;    
+}
+
+#arrowup{
+    display: none;
+}
+#arrowdown{
+    margin-top: 25px;
+    cursor: pointer;
+}
+#range{
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+}
+input {
+    --g: 0px    ; /* the gap */
+    --l: 3px; /* line thickness*/
+    --s: 5px; /* thumb size*/
+    
+    height: var(--s); /* needed for Firefox*/
+    border-radius: 15px;
+    -webkit-appearance :none;
+    -moz-appearance :none;
+    appearance :none;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+  }
+  
+  /* chromium */
+  #range input[type="range" i]::-webkit-slider-thumb{
+    height: var(--s);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border-image: linear-gradient(90deg,var(--grey-200) 50%,#ababab 0) 1/0 100vw/0 calc(100vw + var(--g));
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  /* Firefox */
+  input[type="range"]::-moz-range-thumb {
+    height: var(--s);
+    width: var(--s);
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 var(--l) inset var(--grey-200);
+    border-image: linear-gradient(90deg,var(--grey-200) 50%,#ababab 0) 1/0 100vw/0 calc(100vw + var(--g));
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .items-container{
+    display: flex;
+    column-gap: 20px;
+  }
+  .list{
+    height: fit-content;
+    margin-top: 15px;
+  }
+.dashed-circle{
+    filter: brightness(0.5);        
+}
+#point{
+    transition: 2s ease-in;
+}
+
+.spinner{
+    display: none;
+    filter: brightness(0.5);
+    animation: animate 1s ease infinite;
+}
+.checkmark{
+    display: none;
+}
+li{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+    color: var(--focused);
+    font-weight: 500;
+}
+@keyframes animate {
+    0%{
+        transform: rotate(0turn);
+    }
+    100%{
+        transform: rotate(1turn);
+    }
+    
+}
+
+
+
+
+
+  /* MEDIA QUERIES */
+@media screen and (max-width:480px) {
+    #name, #desktop-logo{
+        display: none;        
+    }
+    #nav-menu{
+        margin-right: 20px;
+    }
+    #nav-search input{     
+        padding: 15px;
+    }
+    #nav-search{
+        width: 100%;
+    }
+    #nav-menu{
+        column-gap: 20px;
+    }
+}
+@media screen and (min-width:480px) and (max-width:930px){
+    #mobile-logo{
+        display: none;
+    }
+    .trial-button{
+        padding: 10px 40px;
+    }
+}
+@media screen and (min-width:600px) {    
+    #mobile-logo{
+        display: none;
+    }
+    #free{
+        width: 70%;        
+    }
+    #free-trial{
+        border-radius: 15px;    
+    }
+    .button1{
+        display: block;
+    }
+    .button2{
+        display: none;
+    }
+    #trial-group{
+        justify-content: space-between;
+    }
+    .container{
+        border-radius: 15px;
+    }
+    .main{
+        justify-content: space-between;        
+    }
+}
+/* MEDIA QUERIES */
