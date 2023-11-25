@@ -47,6 +47,9 @@ header{
     background-color: var(--grey-300);
     width: 100%;
     margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 #navbar{
     width: 100%;
@@ -114,9 +117,9 @@ header{
     position: relative;
     right: 21%;
 }
-#free{
+#free{    
     width: 100%;
-    margin-top: 30px;
+    margin-top: 80px;
 }
 #free-trial{
     display: flex;
@@ -124,8 +127,13 @@ header{
     color: var(--greyLight);
     font-size: var(--fontSize-12);
     padding: 12px 8px 12px 16px;
-    background-color: var(--grey-300);    
+    background-color: var(--grey-300);  
 }
+#free-trial:hover{
+    transition: .5s ease-in-out;
+    background-color: var(--grey-200);
+}
+
 #free-trial img{
     width: 36px;
     height: 36px;
@@ -155,16 +163,16 @@ header{
 .container{
     background-color: var(--white);
     padding: 12px 8px 12px 16px;
-    margin-top: 20px;    
+    margin: 20px 0;    
 }
 .main{
     display: flex;    
 }
 
-#arrowup{
+#arrowdown{
     display: none;
 }
-#arrowdown{
+#arrowdown, #arrowup{
     margin-top: 25px;
     cursor: pointer;
 }
@@ -210,7 +218,8 @@ input {
     appearance: none;
   }
   .cards{
-    width: 100%;    
+    width: 100%;        
+    transition: 3s ease-out;
   }
   .items-container{
     display: flex;
@@ -224,8 +233,6 @@ input {
 .dashed-circle{
     filter: brightness(0.5);        
 }
-
-
 .spinner{
     display: none;
     filter: brightness(0.5);
@@ -238,7 +245,7 @@ ul{
     padding: 0;
     display: flex;
     flex-direction: column;
-    row-gap: 20px;
+    row-gap: 5px;
 }
 li{
     list-style: none;
@@ -276,7 +283,18 @@ li a{
 .panel{
     display: none;
 }
-
+.panel-off{
+    display: none;
+}
+.panel-on{
+    display: block;
+}
+.spin{
+    display: block;
+}
+.check{
+    display: block;
+}
 @keyframes animate {
     0%{
         transform: rotate(0turn);
@@ -312,7 +330,7 @@ li a{
         display: none;
     }
 }
-@media screen and (min-width:480px) and (max-width:930px){
+@media screen and (min-width:480px) and (max-width:930px){    
     #mobile-logo{
         display: none;
     }
@@ -351,8 +369,7 @@ li a{
     .panel{
         display: none;
         justify-content: space-between;
-        align-items: center;
-        width: 108%;
+        align-items: center;        
         margin-top: -20px;
     }
     .panel span{

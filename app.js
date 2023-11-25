@@ -1,45 +1,62 @@
-
-const list = document.querySelector(".list")
-const spinner = document.querySelector(".spinner")
-const checkmark = document.querySelector(".checkmark")
-const dashed = document.querySelector(".dashed-circle")
-const completed = document.querySelector("#point")
-const completedValue = document.querySelector("#completed")
+const list = document.querySelectorAll(".list")
+const spinner = document.querySelectorAll(".spinner")
+const checkmark = document.querySelectorAll(".checkmark")
+const dashed = document.querySelectorAll(".dashed-circle")
+let completed = document.querySelector("#point")
+let completedValue = document.querySelector("#completed")
 const acc = document.querySelectorAll(".accordion")
 const coll = document.querySelectorAll(".coll")
+const cross = document.querySelector("#cross")
+const btn1 = document.querySelector("#arrowup")
+const btn2 = document.querySelector("#arrowdown")
+const card = document.querySelector(".cards")
 
-dashed.onclick = function(){
-    dashed.style.display = 'none'
-    spinner.style.display = 'block'
-    setTimeout(() => {
-        dashed.style.display = 'none'
-        spinner.style.display = 'none'
-        checkmark.style.display = 'block'
-        completed.value =+ 1
-        completedValue.textContent = completed.value
-    }, 1000);
+
+btn1.onclick = function(){
+    btn1.style.display = 'none'
+    btn2.style.display = 'block'
+    card.style.display = 'none'
 }
-checkmark.onclick = function(){
-    checkmark.style.display = 'none'
-    spinner.style.display = 'none'
-    dashed.style.display = 'block'
-    completed.value =- 1
-    completedValue.textContent = completed.value
+btn2.onclick = function(){
+    btn2.style.display = 'none'
+    btn1.style.display = 'block'
+    card.style.display = 'block'
 }
+cross.onclick = function () {
+    cross.parentElement.parentElement.parentElement.remove()
+}
+    for (let i = 0; i < list.length; i++) {           
+    dashed[i].onclick = function(){
+        dashed[i].style.display = 'none'
+        spinner[i].style.display = 'block'        
+        setTimeout(() => {
+            dashed[i].style.display = 'none'
+            spinner[i].style.display = 'none'                        
+            checkmark[i].style.display = 'block'                
+            completed = completed.value++                       
+            completedValue.textContent = completed
+        }, 1000);
+    }
+    checkmark[i].onclick = function(){
+        checkmark[i].style.display = 'none'
+        spinner[i].style.display = 'none'
+        dashed[i].style.display = 'block' 
+        completed = completed.value--       
+        completedValue.textContent = completed
+    }
+}    
+
 
 for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener('click', () => {
-        acc[i].classList.toggle ('collapse')
-        for (let j = 0; j < coll.length; j++) {            
-        coll[j].classList.toggle('collapse')                                          
-        }    
-        let panel = acc[i].nextElementSibling;
+    acc[i].addEventListener('click', () => {                    
+        coll[i].classList.toggle('collapse')                          
+        let panel = acc[i].nextElementSibling;            
         if (panel.style.display === "flex") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "flex";
-        }    
-        
+            panel.style.display = "none"            
+        }
+        else {
+            panel.style.display = "flex"            
+        }                                 
     }
     )
 }
