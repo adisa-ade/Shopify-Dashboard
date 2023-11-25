@@ -209,20 +209,22 @@ input {
     -moz-appearance: none;
     appearance: none;
   }
+  .cards{
+    width: 100%;    
+  }
   .items-container{
     display: flex;
     column-gap: 20px;
+    padding: 10px 5px;
+    margin-left: -10px;
   }
   .list{
     height: fit-content;
-    margin-top: 15px;
   }
 .dashed-circle{
     filter: brightness(0.5);        
 }
-#point{
-    transition: 2s ease-in;
-}
+
 
 .spinner{
     display: none;
@@ -232,14 +234,49 @@ input {
 .checkmark{
     display: none;
 }
+ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
 li{
     list-style: none;
+    margin: 0;
 }
 li a{
     text-decoration: none;
     color: var(--focused);
     font-weight: 500;
 }
+.accordion{
+    width: 100%; 
+    padding:0 ;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    font-size: var(--fontSize-14);
+    font-weight: 600;
+}
+.coll{
+    border-radius: 10px;
+}
+.collapse{
+    background-color: var(--pressed);
+    transition: 0.4s all;
+}
+.panel-btn{
+    background-color: var(--grey-50);
+    color: var(--white);
+    padding: 6px 12px;
+    font-weight: 600;
+    border-radius: 10px;
+}
+.panel{
+    display: none;
+}
+
 @keyframes animate {
     0%{
         transform: rotate(0turn);
@@ -249,9 +286,6 @@ li a{
     }
     
 }
-
-
-
 
 
   /* MEDIA QUERIES */
@@ -271,6 +305,12 @@ li a{
     #nav-menu{
         column-gap: 20px;
     }
+    .items-container{       
+        column-gap: 5px;
+      }
+      .panel-img{
+        display: none;
+    }
 }
 @media screen and (min-width:480px) and (max-width:930px){
     #mobile-logo{
@@ -278,6 +318,9 @@ li a{
     }
     .trial-button{
         padding: 10px 40px;
+    }
+    .panel span{
+        display:block;
     }
 }
 @media screen and (min-width:600px) {    
@@ -304,6 +347,16 @@ li a{
     }
     .main{
         justify-content: space-between;        
+    }
+    .panel{
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        width: 108%;
+        margin-top: -20px;
+    }
+    .panel span{
+        display:block;
     }
 }
 /* MEDIA QUERIES */
