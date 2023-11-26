@@ -12,10 +12,17 @@ const btn2 = document.querySelector("#arrowdown")
 const card = document.querySelector(".cards")
 const dropdown = document.querySelector("#alias")
 const menu = document.querySelector(".menu")
-
+const bell = document.querySelector("#notification-icon")
+const alertMenu = document.querySelector(".alert")
 
 dropdown.onclick = function(){
     menu.classList.toggle("menu-drop")
+    console.log(menu)
+}
+
+
+bell.onclick = function(){
+    alertMenu.classList.toggle("alert-drop")
 }
 btn1.onclick = function(){
     btn1.style.display = 'none'
