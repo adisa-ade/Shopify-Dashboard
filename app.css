@@ -42,6 +42,7 @@ body{
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     background-color: var(--background);
+    position: relative;
 }
 header{
     background-color: var(--grey-300);
@@ -116,6 +117,9 @@ header{
     border-radius: 10px;
     position: relative;
     right: 21%;
+    cursor: pointer;
+    outline: none;
+    border: 0;
 }
 #free{    
     width: 100%;
@@ -305,7 +309,81 @@ li a{
     
 }
 
+.menu{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);         
+    width: 300px;
+    border-radius: 15px;
+    position: absolute;
+    top: 9.5%;
+    right: 1.7%;
+    row-gap: 1.5px;
+    box-shadow: 2px 2px 6px 1px var(--greyLight);    
+    display: none;
+}
+.menu-drop{
+    display: flex;        
+    flex-direction: column;
+}
+.user-menu, .store, .sub-button, .manage{
+    margin: 5px;
+}
 
+.menu button{
+    background-color: white;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+}
+.user-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--s-50);    
+    height: 50px;
+    border-radius: 15px;    
+    padding: 0 7px;
+}
+#name-menu{
+    font-size: var(--fontSize-12);
+    font-weight: 300;
+    padding: 13px;
+    border-radius: 10px;
+    width: 134px;
+}
+#alias-menu{
+    background-color: var(--green);
+    color: var(---greyMid);
+    font: var(--fontSize-12);
+    font-weight:bold;
+    padding: 7.5px;
+    border-radius: 10px;
+}
+#sub-menu{
+    display: flex;
+}
+.store{
+    display: flex;
+}
+.sub-button{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.menu-btn{
+    font-size: var(--fontSize-14);
+    transition: .5s all;
+}
+.menu p{
+    font-size: var(--fontSize-12);
+    margin: 0 0 10px 6px;
+}
+.manage{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
   /* MEDIA QUERIES */
 @media screen and (max-width:480px) {
     #name, #desktop-logo{
@@ -329,6 +407,7 @@ li a{
       .panel-img{
         display: none;
     }
+    
 }
 @media screen and (min-width:480px) and (max-width:930px){    
     #mobile-logo{

@@ -10,8 +10,13 @@ const cross = document.querySelector("#cross")
 const btn1 = document.querySelector("#arrowup")
 const btn2 = document.querySelector("#arrowdown")
 const card = document.querySelector(".cards")
+const dropdown = document.querySelector("#alias")
+const menu = document.querySelector(".menu")
 
 
+dropdown.onclick = function(){
+    menu.classList.toggle("menu-drop")
+}
 btn1.onclick = function(){
     btn1.style.display = 'none'
     btn2.style.display = 'block'
@@ -32,16 +37,17 @@ cross.onclick = function () {
         setTimeout(() => {
             dashed[i].style.display = 'none'
             spinner[i].style.display = 'none'                        
-            checkmark[i].style.display = 'block'                
-            completed = completed.value++                       
-            completedValue.textContent = completed
+            checkmark[i].style.display = 'block'                                
+            completed = +completed.value + 1 
+            console.log(completed)
+            completedValue.textContent = completed + 1
         }, 1000);
     }
     checkmark[i].onclick = function(){
         checkmark[i].style.display = 'none'
         spinner[i].style.display = 'none'
         dashed[i].style.display = 'block' 
-        completed = completed.value--       
+        completed = parseInt(completedValue) - 1
         completedValue.textContent = completed
     }
 }    
