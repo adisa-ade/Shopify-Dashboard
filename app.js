@@ -2,6 +2,7 @@ const list = document.querySelectorAll(".list")
 const spinner = document.querySelectorAll(".spinner")
 const checkmark = document.querySelectorAll(".checkmark")
 const dashed = document.querySelectorAll(".dashed-circle")
+const rounded = document.querySelectorAll(".rounded")
 let completed = document.querySelector("#point")
 let completedValue = document.querySelector("#completed")
 const acc = document.querySelectorAll(".accordion")
@@ -13,16 +14,30 @@ const card = document.querySelector(".cards")
 const dropdown = document.querySelector("#alias")
 const menu = document.querySelector(".menu")
 const bell = document.querySelector("#notification-icon")
-const alertMenu = document.querySelector(".alert")
+const alertMenu = document.querySelector(".alerts")
 
-dropdown.onclick = function(){
+
+
+
+dropdown.onclick = function(){    
+    if(alertMenu.classList.contains('alert-drop')){
+        alertMenu.classList.remove('alert-drop')
+        menu.classList.toggle("menu-drop")
+    }
+    else {
     menu.classList.toggle("menu-drop")
-    console.log(menu)
+}
 }
 
 
-bell.onclick = function(){
-    alertMenu.classList.toggle("alert-drop")
+bell.onclick = function(){        
+    if(menu.classList.contains('menu-drop')){
+        menu.classList.remove('menu-drop')
+        alertMenu.classList.toggle("alert-drop")
+    }
+    else{
+        alertMenu.classList.toggle("alert-drop")
+    }
 }
 btn1.onclick = function(){
     btn1.style.display = 'none'
